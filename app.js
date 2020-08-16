@@ -12,7 +12,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.get("/", function(req,res) {
-    var day = date();
+    var day = date.getDate();
+    // var day = date.getDay();
     res.render('list', {ListTitle: day, newListItems: items});
 });
 
